@@ -1,0 +1,16 @@
+@charset "UTF-8";
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+.formInput{
+	width: 30vw;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin-left: 35vw;
+}
+
+.addReview{
+	margin-top:35vh;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link th:href="@{/main.css}" rel="stylesheet">
+<style>
+.logo{
+text-align: center;
+}</style>
+</head>
+<body>
+	<div class="navbar-menu">
+    <div class="navbar-start">
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+                Tickets
+            </a>
+            <div class="navbar-dropdown">
+                <a href="/createTicket" class="button is-link">Add New Ticket</a>
+                <a href="/InputTicketIDPage" class="navbar-item button is-primary">Search for ticket by ID</a>
+                <a href="/InputTicketPriceRangePage" class="navbar-item button is-primary">Search for ticket by price range</a>
+                <a href="/InputTicketCityPage"class="navbar-item button is-primary">Search for ticket by city</a>
+                <a href="/showAllTickets" class="navbar-item button is-primary">Show All Tickets</a>
+                <a href="/InputTicketDetailsForUpdate"class="navbar-item button is-primary">Update ticket Information</a>
+                <a href="/InputTicketIDDelete" class="navbar-item button is-primary">Delete ticket</a>
+             </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+                Reviews
+            </a>
+            <div class="navbar-dropdown">
+                <a href="/InputReviewDetails" class="button is-primary">Add New Review</a>
+                <a href="/InputReviewIDPage" class="button is-info">Search for Review by ID</a>
+                <a href="/InputReviewShowIDPage" class="button is-info">Search for Review by Show ID</a>
+                <a href="/showAllReviews" class="button is-link">Show All Reviews</a><br><br>
+                <a href="/InputReviewDetailsForUpdate" class="button is-link">Update Review</a>
+                <a href="/InputReviewIDDelete" class="button is-primary">Delete Review</a>
+             </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+                Baskets
+            </a>
+            <div class="navbar-dropdown">
+                <a href="/baskets" class="button is-primary">View All Baskets</a>
+                <a href="/basket-details" class="button is-info">View Baskets Details</a>
+                 <a href="/baskets/username" class="button is-link">View Baskets by Username</a>
+                  </div>
+        </div>
+    <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+                Users
+            </a>
+            <div class="navbar-dropdown">
+            <a href="/InputNewUserDetails" class="button is-link">Register New User</a>
+            <a href="/InputUsername" class="button is-info">Search a User</a>
+            <a href="/DisplayAllUsers" class="button is-primary">View All Users</a>
+            <a href="/InputPasswordForUpdate" class="button is-warning">Change Password</a>
+            <a href="/InputUserToDelete" class="button is-danger">Delete A User</a>
+        </div>
+    </div>
+   
+    <a href="/admin" class="button is-primary">Login as Admin</a><br><br>
+
+    <a href="/user" class="button is-primary">User Login</a><br><br>
+
+    </div>
+    </div>
+<section class="hero">
+  <div class="hero-body logo">
+     <img th:src="@{/logo.png}" >
+  </div>
+</section>
+	<h1>Please register by entering all details</h1>
+	<form class="box" th:action="@{./saveUser}" th:object="${user}" method="post">
+  <div class="field">
+    <label class="label">Username</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="e.g. jDoe123" th:field="*{username}" required pattern="[a-zA-Z0-9]+">
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">First Name</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="John" th:field="*{firstName}" required pattern="[a-zA-Z ]+">
+    </div>
+  </div>
+<div class="field">
+    <label class="label">Last Name</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Doe" th:field="*{lastName}" required pattern="[a-zA-Z ]+">
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Password</label>
+    <div class="control">
+      <input class="input" type="password" placeholder="********" th:field="*{password}" required>
+    </div>
+  </div>
+<div class="field">
+    <label class="label">email</label>
+    <div class="control">
+      <input class="input" type="email" placeholder="jDoes@gmail.com" th:field="*{email}" required>
+    </div>
+  </div>
+  <input class="button is-primary" type="submit" value="Save user" required>
+</form>
+	<br><br>
+	<a href="/">Go to Main Page</a>
+</body>
+</html>

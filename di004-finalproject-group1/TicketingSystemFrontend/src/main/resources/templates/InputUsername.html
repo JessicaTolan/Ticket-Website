@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Search Users</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link th:href="@{/main.css}" rel="stylesheet">
+<style>
+.logo{
+text-align: center;
+}</style>
+</head>
+<body>
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a href="/" class="navbar-item">
+        Home
+      </a>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a href="/admin" class="button is-primary">
+            <strong>Admin Login</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-body logo">
+     <img th:src="@{/logo.png}" >
+  </div>
+</section>
+<form class="box" action="./searchUsername">
+<div class="field">
+    <label class="label">Enter the username you would like to search</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Username" name="name">
+    </div>
+  </div>
+  <input class="button is-primary" type="submit" value="Search by username">
+</form>
+<a href="/">GoTo Main Page</a><br><br>
+</body>
+</html>

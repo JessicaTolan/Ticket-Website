@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Baskets for User</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link th:href="@{/main.css}" rel="stylesheet">
+<style>
+.logo{
+text-align: center;
+}</style>
+</head>
+<body>
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a href="/home" class="navbar-item">
+        Home
+      </a>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a href="/admin" class="button is-primary">
+            <strong>Admin Login</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-body logo">
+     <img th:src="@{/logo.png}" >
+  </div>
+</section>
+    <h1>Baskets for User</h1>
+    <ul>
+        <li th:each="basket : ${baskets}">
+            Ticket ID: <span th:text="${basket.ticketId}"></span>,
+            Quantity: <span th:text="${basket.quantity}"></span>
+        </li>
+    </ul>
+     <a href="/baskets">View All Baskets</a>
+     <a href="/home">GoTo Main Page</a><br><br>
+</body>
+</html>

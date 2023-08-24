@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link th:href="@{/main.css}" rel="stylesheet">
+<style>
+body{
+text-align: center;
+}
+button{
+align-self: center;
+}
+.logo{
+text-align: center;
+}
+</style>
+</head>
+<body>
+<section class="hero is-primary">
+  <div class="hero-body">
+    <p class="title">
+      Welcome Admin User
+    </p>
+    <p class="subtitle">
+      Please select what you would like to do
+    </p>
+  </div>
+</section>
+<section class="hero">
+  <div class="hero-body logo">
+     <img th:src="@{/logo.png}" >
+  </div>
+</section>
+<div class="column">
+<button class="button has-background-primary has-text-white is-medium column is-three-fifths is-offset-one-fifth"><a href="/InputUserToDelete">Delete A User</a></button>
+</div>
+
+<div class="column">
+<button class="button has-background-primary has-text-white is-medium column is-three-fifths is-offset-one-fifth"><a href="/DisplayAllUsers">View all Users</a></button>
+</div>
+
+<div class="column">
+<button class="button has-background-primary has-text-white is-medium column is-three-fifths is-offset-one-fifth"><a href="/InputUsername">Search A User</a></button>
+</div>
+
+<div class="column">
+<button class="button has-background-primary has-text-white is-medium column is-three-fifths is-offset-one-fifth"><a href="/createTicket">Add Tickets</a></button>
+</div>
+
+<div class="column">
+<button class="button has-background-primary has-text-white is-medium column is-three-fifths is-offset-one-fifth"><a href="/InputTicketDetailsForUpdate">Update Tickets</a></button>
+</div>
+
+<div class="column">
+<button class="button has-background-primary has-text-white is-medium column is-three-fifths is-offset-one-fifth"><a href="/InputTicketIDDelete">Delete a Show</a></button>
+</div>
+
+<div class="column">
+<button class="button has-background-primary has-text-white is-medium column is-three-fifths is-offset-one-fifth"><a href="/InputReviewDetailsForUpdate">Update Review</a></button></div>
+
+
+<div class="column">
+<button class="button has-background-primary has-text-white is-medium column is-three-fifths is-offset-one-fifth"><a href="/InputReviewIDDelete">Delete Review</a></button></div>
+
+<div class="column">
+<button class="button has-background-primary has-text-white is-medium column is-three-fifths is-offset-one-fifth"><a href="/baskets">View All Baskets</a></button></div>
+
+<div class="column">
+<button class="button has-background-primary has-text-white is-medium column is-three-fifths is-offset-one-fifth"><a href="/logoutAdmin">Logout</a></button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link th:href="@{/main.css}" rel="stylesheet">
+<style>
+.logo{
+text-align: center;
+}</style>
+</head>
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a href="/" class="navbar-item">
+        Home
+      </a>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a href="/admin" class="button is-primary">
+            <strong>Admin Login</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-body logo">
+     <img th:src="@{/logo.png}" >
+  </div>
+</section>
+<h1>Create New Ticket</h1>
+	<hr>
+	<form action="./saveTicket">
+		Ticket ID : <input type="number" name="ticketId" ><br><br> 
+		Ticket Price : <input type="number" name="price" ><br><br>
+		Ticket Image : <input type="text" name="image" ><br><br>
+		Ticket Description : <input type="text" name="description" ><br><br>
+		Ticket Name : <input type="text" name="name" ><br><br>
+		Ticket City : <input type="text" name="city"><br><br>
+		Ticket Price Range : <input type="text" name="priceRange" ><br><br>
+		Ticket Date : <input type="text" name="date"><br><br>
+		Ticket Venue : <input type="text" name="venue"><br><br>
+		<input type="submit" value="Create Ticket">
+	</form>
+	<a href="/">GoTo Main Page</a>
+</body>
+</html>

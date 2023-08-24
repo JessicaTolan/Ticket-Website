@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link th:href="@{/main.css}" rel="stylesheet">
+<style>
+.logo{
+text-align: center;
+}</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-body logo">
+     <img th:src="@{/logo.png}" >
+  </div>
+</section>
+<h1>Please choose what action you would like to carry out</h1>
+<button><a href="/InputUsername">Search a user</a></button>
+<button><a href="/InputNewUserDetails">Add a new user</a></button>
+<button><a href="/InputPasswordForUpdate">Change password</a></button>
+<button><a href="/InputUserToDelete">Delete A User</a></button>
+<!-- this to be added to admin page -->
+<button><a href="/DisplayAllUsers">View All Users</a></button>
+<a href="/home">GoTo Main Page</a><br><br>
+</body>
+</html>

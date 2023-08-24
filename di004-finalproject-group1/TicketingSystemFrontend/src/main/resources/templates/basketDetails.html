@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket Details</title>
+    <!-- Link to Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Custom CSS styles -->
+    <style>
+        /* Custom styles for the container */
+        .container {
+            margin-top: 30px;
+        }
+
+        /* Custom styles for the headings */
+        h1, h2 {
+            color: #007bff; /* Hexadecimal color code for blue */
+        }
+
+        /* Custom styles for the paragraphs */
+        p {
+            margin-bottom: 10px;
+        }
+
+        /* Custom styles for the update form */
+        form {
+            margin-top: 20px;
+        }
+
+        /* Custom styles for the input fields */
+        input[type="number"] {
+            padding: 5px;
+            width: 100px;
+        }
+
+        /* Custom styles for the buttons */
+        button {
+            padding: 8px 20px;
+            margin-right: 10px;
+            background-color: #007bff; /* Hexadecimal color code for blue */
+            color: #ffffff; /* Hexadecimal color code for white */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        /* Change button color on hover */
+        button:hover {
+            background-color: #0056b3; /* Hexadecimal color code for a slightly darker blue */
+        }
+
+        /* Custom styles for the delete form */
+        #deleteForm {
+            margin-top: 10px;
+        }
+
+        /* Custom styles for the delete button */
+        input[type="submit"] {
+            background-color: #dc3545; /* Hexadecimal color code for red */
+            transition: background-color 0.2s ease;
+             margin-right: 10px
+        }
+
+        /* Change delete button color on hover */
+        input[type="submit"]:hover {
+            background-color: #c82333; /* Hexadecimal color code for a slightly darker red */
+        }
+
+        /* Custom styles for the cancel button */
+        button.cancel-button {
+            background-color: #6c757d; /* Hexadecimal color code for gray */
+        }
+
+        /* Change cancel button color on hover */
+        button.cancel-button:hover {
+            background-color: #5a6268; /* Hexadecimal color code for a slightly darker gray */
+        }
+
+        /* Custom styles for the back link */
+        a.back-link {
+            display: block;
+            margin-top: 20px;
+            color: #007bff; /* Hexadecimal color code for blue */
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        /* Change back link color on hover */
+        a.back-link:hover {
+            color: #0056b3; /* Hexadecimal color code for a slightly darker blue */
+        }
+
+        /* Custom styles for the available basket list */
+        ul {
+            margin-top: 20px;
+        }
+
+        /* Custom styles for the list items */
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* Custom styles for the available ticket ID links */
+        a.ticket-link {
+            color: #007bff; /* Hexadecimal color code for blue */
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        /* Change available ticket ID link color on hover */
+        a.ticket-link:hover {
+            color: #0056b3; /* Hexadecimal color code for a slightly darker blue */
+        }
+    </style>
+  
+</head>
+<body>
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a href="/home" class="navbar-item">
+        Home
+      </a>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a href="/admin" class="button is-primary">
+            <strong>Admin Login</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-body logo">
+     <img th:src="@{/logo.png}" >
+  </div>
+</section>
+    <div class="container">
+        <h1>Basket Details</h1>
+        <p>Basket ID: <span th:text="${basket.basketId}"></span></p>
+        <p>Username: <span th:text="${basket.username}"></span></p>
+        <p>Ticket ID: <span th:text="${basket.ticketId}"></span></p>
+        <p>Quantity: <span th:text="${basket.quantity}"></span></p>
+
+      
+        
+        <!-- Update Form -->
+	<form th:action="@{/baskets/update}" method="post">
+		 <input type="hidden" name="ticketId" th:value="${basket.ticketId}">
+   		 <input type="number" name="quantity" placeholder="New Quantity" required min="1">
+    	<p>Please note: the minimum number of tickets is 1</p>
+    	<button type="submit">Update</button>
+	</form>
+
+
+    
+       
+
+        <a href="/baskets" class="back-link">Back to Basket List</a>
+
+        <hr>
+        <h2>All Available Basket Details</h2>
+        <ul>
+            <li th:each="basket : ${baskets}">
+                <a th:href="@{/baskets/__${basket.ticketId}__}" class="ticket-link">Ticket ID <span th:text="${basket.ticketId}"></span></a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <!-- Link to your CSS file -->
+    <link th:href="@{/style.css}" rel="stylesheet" href="/styles.css"> 
+    <!-- Link to Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="mainText">
+        <h1>Welcome to the Main Page</h1>
+        <a href="/baskets" class="button is-primary">View All Baskets</a>
+        <a href="/basket-details" class="button is-info">View Baskets Details</a>
+        <a href="/baskets/username" class="button is-link">View Baskets by Username</a>
+    </div>
+    <a href="/home">GoTo Main Page</a><br><br>
+</body>
+</html>
+

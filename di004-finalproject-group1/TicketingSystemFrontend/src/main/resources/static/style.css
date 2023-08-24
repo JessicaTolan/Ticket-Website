@@ -1,0 +1,43 @@
+/* Custom styles for the mainText div */
+.mainText {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Custom styles for the h1 element */
+h1 {
+    color: #007bff; /* Hexadecimal color code for blue */
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Custom styles for the buttons */
+a.button {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Custom styles for each button color class */
+a.button.is-primary {
+    background-color: #007bff; /* Hexadecimal color code for blue */
+    color: #ffffff; /* Hexadecimal color code for white */
+}
+
+a.button.is-info {
+    background-color: #17a2b8; /* Hexadecimal color code for teal */
+    color: #ffffff; /* Hexadecimal color code for white */
+}
+
+a.button.is-link {
+    background-color: #138496; /* Hexadecimal color code for dark teal */
+    color: #ffffff; /* Hexadecimal color code for white */
+}
+
+/* Custom styles for the buttons on hover */
+a.button:hover {
+    opacity: 0.8;
+}

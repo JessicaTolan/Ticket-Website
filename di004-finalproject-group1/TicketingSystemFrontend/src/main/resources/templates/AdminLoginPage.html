@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link th:href="@{/main.css}" rel="stylesheet">
+<style>
+.logo{
+text-align: center;
+}
+.homeLinks{
+    display: flex;
+    justify-content: center;}</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-body logo">
+     <img th:src="@{/logo.png}" >
+  </div>
+</section>
+<div class="formInput">
+<form class="box" action="#" th:action="@{./Adminlogin}" th:object="${admin}" method="post">
+  <div class="field">
+    <label class="label">Admin Username</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Username" th:field="*{adminUsername}">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Password</label>
+    <div class="control">
+      <input class="input" type="password" placeholder="Password" th:field="*{password}">
+    </div>
+  </div>
+  <input class="button" type="submit" value="Login">
+</form>
+  </div>
+   <div class="homeLinks">
+<a href="/">GoTo Main Page</a><br><br>
+</div>
+</body>
+</html>
